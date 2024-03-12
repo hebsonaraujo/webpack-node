@@ -1,0 +1,29 @@
+{
+  "name": "AED-TS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "serve": "http-server -c-1",
+    "build:ts": "tsc -p ./ --rootDir ./src",
+    "webpack": "webpack --env build",
+    "start:dev": "npm run build:ts && npm run webpack && npm run serve",
+    "start:node": "npm run build:ts && node dist/data-structures/index.js",
+    "start:browser": "npm run build:ts && npm run webpack && npm run webpack-server",
+    "webpack-server": "webpack serve",
+    "start:prod": "npm run build:ts && npm run webpack && node dist/data-structures/index.js",
+    "clean": "rm -rf ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  }
+}
